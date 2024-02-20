@@ -127,6 +127,19 @@ const handlePlayerMovement = () => {
 }
 
 const render = () => {
+    users.forEach((p, id) => {
+        if (playerId == id) return;
+        console.log(p, id);
+        ctx.strokeStyle = "red";
+        ctx.strokeRect(
+        p.x-player.x + 1280 / 2 - player.width / 2, 
+        p.y-player.y + 720 / 2 - player.height / 2,
+        25,
+        50)
+        
+    })
+
+
     player.draw(ctx);
     click.draw(ctx);
 };
